@@ -7,6 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
     sidebar.classList.toggle("active");
   });
 
+  // Back button (closes sidebar to return to main page)
+  document.getElementById("backBtn").addEventListener("click", () => {
+    sidebar.classList.remove("active");
+  });
+
   // Dark mode toggle (switch inside navbar)
   darkModeSwitch.addEventListener("change", () => {
     document.body.classList.toggle("dark");
