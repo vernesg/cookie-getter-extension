@@ -39,7 +39,7 @@ body.dark .navbar {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.burger, #darkModeBtn {
+.burger {
   background: none;
   border: none;
   cursor: pointer;
@@ -47,11 +47,11 @@ body.dark .navbar {
   transition: color 0.3s;
 }
 
-body.dark .burger, body.dark #darkModeBtn {
+body.dark .burger {
   color: #ecf0f1;
 }
 
-.burger:hover, #darkModeBtn:hover {
+.burger:hover {
   color: #007bff;
 }
 
@@ -98,6 +98,40 @@ body.dark .nav-link:hover {
   background: #2c3e50;
 }
 
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+#darkModeBtn, #developerBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s;
+}
+
+body.dark #darkModeBtn, body.dark #developerBtn {
+  color: #ecf0f1;
+}
+
+#darkModeBtn:hover, #developerBtn:hover {
+  color: #007bff;
+}
+
+/* Dark Mode Icon Toggle */
+#darkModeBtn .sun-icon {
+  display: none;
+}
+
+body.dark #darkModeBtn .moon-icon {
+  display: none;
+}
+
+body.dark #darkModeBtn .sun-icon {
+  display: inline;
+}
+
 /* Container and Cards */
 .container {
   padding: 20px;
@@ -133,14 +167,6 @@ body.dark .card h2 {
 /* Profile Section */
 .profile-card {
   text-align: center;
-}
-
-.profile-img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-  border: 3px solid #007bff;
 }
 
 .info-text {
@@ -207,19 +233,6 @@ body.dark .btn-icon:hover {
 
 .btn-icon svg {
   flex-shrink: 0;
-}
-
-/* Dark Mode Icon Toggle */
-#darkModeBtn .sun-icon {
-  display: none;
-}
-
-body.dark #darkModeBtn .moon-icon {
-  display: none;
-}
-
-body.dark #darkModeBtn .sun-icon {
-  display: inline;
 }
 
 /* Responsive */
