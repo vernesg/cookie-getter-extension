@@ -1,53 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FB COOKIE EXTENSION</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook Cookie Extractor</title>
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body class="light">
-
-<nav>
-  <div class="nav-container">
-    <div class="logo">FB COOKIE EXTENSION</div>
-    <div class="burger"><i class="fas fa-bars"></i></div>
-    <ul class="nav-menu">
-      <li><button id="developerBtn"><i class="fas fa-code"></i> Developer</button></li>
-      <li><button id="darkModeBtn"><i class="fas fa-moon"></i> Dark Mode</button></li>
-    </ul>
-  </div>
-</nav>
-
-<div class="content">
-  <h2>Developer Panel</h2>
-
-  <div class="profile">
-    <img id="pfp" src="" alt="Profile Picture">
-    <div>
-      <p id="name">Name: Loading...</p>
-      <p id="uid">UID: Loading...</p>
+  <nav class="navbar">
+    <button class="burger" title="Toggle Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <div class="nav-menu">
+      <a href="#" class="nav-link">Home</a>
+      <a href="#" class="nav-link">About</a>
+      <a href="#" class="nav-link">Settings</a>
     </div>
-  </div>
+    <button id="darkModeBtn" title="Toggle Dark Mode">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="moon-icon">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sun-icon" style="display: none;">
+        <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2"/>
+      </svg>
+    </button>
+  </nav>
 
-  <div class="box">
-    <div class="box-header">
-      <span>Cookie String</span>
-      <button id="copyString"><i class="fas fa-copy"></i> Copy</button>
+  <main class="container">
+    <div class="card profile-card">
+      <h2>Profile Info</h2>
+      <img id="pfp" alt="Profile Picture" class="profile-img">
+      <div id="uid" class="info-text">UID: Loading...</div>
+      <div id="name" class="info-text">Name: Loading...</div>
     </div>
-    <textarea id="cookieString" readonly></textarea>
-  </div>
 
-  <div class="box">
-    <div class="box-header">
-      <span>Cookie JSON</span>
-      <button id="copyJson"><i class="fas fa-copy"></i> Copy</button>
+    <div class="card cookies-card">
+      <h2>Facebook Cookies</h2>
+      <div class="textarea-group">
+        <label for="cookieJson">JSON Format</label>
+        <textarea id="cookieJson" readonly placeholder="JSON cookies will appear here..."></textarea>
+        <button id="copyJson" class="btn-icon" title="Copy JSON">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 4H4C2.9 4 2 4.9 2 6V20C2 21.1 2.9 22 4 22H18C19.1 22 20 21.1 20 20V8L16 4ZM18 20H4V6H14V10H18V20Z" fill="currentColor"/>
+            <path d="M14 10H18L14 6V10Z" fill="currentColor"/>
+          </svg>
+          Copy JSON
+        </button>
+      </div>
+      <div class="textarea-group">
+        <label for="cookieString">String Format</label>
+        <textarea id="cookieString" readonly placeholder="String cookies will appear here..."></textarea>
+        <button id="copyString" class="btn-icon" title="Copy String">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 4H4C2.9 4 2 4.9 2 6V20C2 21.1 2.9 22 4 22H18C19.1 22 20 21.1 20 20V8L16 4ZM18 20H4V6H14V10H18V20Z" fill="currentColor"/>
+            <path d="M14 10H18L14 6V10Z" fill="currentColor"/>
+          </svg>
+          Copy String
+        </button>
+      </div>
     </div>
-    <textarea id="cookieJson" readonly></textarea>
-  </div>
-</div>
+  </main>
 
-<script src="popup.js"></script>
+  <script src="popup.js"></script>
 </body>
 </html>
