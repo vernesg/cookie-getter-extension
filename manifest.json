@@ -1,8 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Facebook Cookie Extractor",
-  "version": "1.0",
-  "description": "View Facebook cookies in JSON and string formats.",
+  "version": "3.0",
   "permissions": ["cookies"],
   "host_permissions": ["*://*.facebook.com/*"],
   "action": {
