@@ -26,6 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
     window.open("data:text/html,<html><body style='background-color: #8a2be2; color: #fff; padding: 20px;'><h1>Settings</h1><p>Settings page placeholder.</p></body></html>", "_blank");
   });
 
+  // Exit button (closes the popup)
+  document.getElementById("exitBtn").addEventListener("click", () => {
+    window.close();
+  });
+
   // Copy helper (real clipboard copy)
   function copy(text) {
     navigator.clipboard.writeText(text).then(() => {
