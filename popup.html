@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FB Dev Panel</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body class="light">
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">FB Dev Panel</div>
+    <div class="burger"><i class="fas fa-bars"></i></div>
+    <ul class="nav-menu">
+      <li><button id="developerBtn"><i class="fas fa-code"></i> Developer</button></li>
+      <li><button id="darkModeBtn"><i class="fas fa-moon"></i> Dark Mode</button></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="content">
+  <h2>Developer Panel</h2>
+
+  <div class="profile">
+    <img id="pfp" src="" alt="Profile Picture">
+    <div>
+      <p id="name">Name: Loading...</p>
+      <p id="uid">UID: Loading...</p>
+    </div>
+  </div>
+
+  <div class="box">
+    <div class="box-header">
+      <span>Cookie String</span>
+      <button id="copyString"><i class="fas fa-copy"></i> Copy</button>
+    </div>
+    <textarea id="cookieString" readonly></textarea>
+  </div>
+
+  <div class="box">
+    <div class="box-header">
+      <span>Cookie JSON</span>
+      <button id="copyJson"><i class="fas fa-copy"></i> Copy</button>
+    </div>
+    <textarea id="cookieJson" readonly></textarea>
+  </div>
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>
