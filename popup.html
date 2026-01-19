@@ -3,42 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Facebook Cookie Extractor r</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      transition: background-color 0.3s, color 0.3s;
-    }
-    body.light { background-color: white; color: black; }
-    body.dark { background-color: #121212; color: white; }
-    .burger { cursor: pointer; font-size: 24px; }
-    .nav-menu { display: none; }
-    .nav-menu.active { display: block; }
-    .nav-menu ul { list-style: none; padding: 0; }
-    .nav-menu li { margin: 10px 0; }
-    textarea { width: 100%; height: 200px; resize: vertical; }
-    button { margin: 5px; padding: 10px; cursor: pointer; }
-    #uid { font-weight: bold; margin-bottom: 10px; }
-  </style>
+  <title>Facebook Cookie Extractor</title>
+  <link rel="stylesheet" href="popup.css">
 </head>
-<body class="light">
-  <div class="burger">☰</div>
-  <nav class="nav-menu">
-    <ul>
-      <li><button id="darkModeBtn">Toggle Dark Mode</button></li>
-      <li><button id="developerBtn">Developer Info</button></li>
+<body>
+  <nav class="navbar">
+    <div class="burger">☰</div>
+    <ul class="nav-menu">
+      <li><a href="#" id="home">🏠 Home</a></li>
+      <li><a href="#" id="settings">⚙️ Settings</a></li>
+      <li><a href="#" id="developer">👨‍💻 Developer</a></li>
     </ul>
   </nav>
-  <h2>Facebook Cookies</h2>
-  <div id="uid">UID: Loading...</div>
-  <h3>JSON Format</h3>
-  <textarea id="cookieJson" readonly></textarea>
-  <button id="copyJson">Copy JSON</button>
-  <h3>String Format</h3>
-  <textarea id="cookieString" readonly></textarea>
-  <button id="copyString">Copy String</button>
+  <div class="container">
+    <h1>Facebook Cookies</h1>
+    <p id="uid">UID: Loading...</p>
+    <button id="darkModeBtn">🌙 Dark Mode</button>
+    <h2>JSON Format</h2>
+    <textarea id="cookieJson" readonly placeholder="Loading JSON..."></textarea>
+    <button id="copyJson">📋 View/Copy JSON</button>
+    <h2>String Format</h2>
+    <textarea id="cookieString" readonly placeholder="Loading String..."></textarea>
+    <button id="copyString">📋 View/Copy String</button>
+  </div>
   <script src="popup.js"></script>
 </body>
 </html>
