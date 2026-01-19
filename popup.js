@@ -10,7 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.toggle("light");
   });
 
-  // Copy function and cookie fetching (your updated script integrated)
+  // Developer button
+  document.getElementById("developerBtn").addEventListener("click", () => {
+    alert("Developer: [Your Name or Info]\nEmail: example@example.com\nVersion: 1.0");
+  });
+
+  // Copy function and cookie fetching
   function copy(text) {
     navigator.clipboard.writeText(text);
   }
@@ -32,31 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("cookieJson").value = JSON.stringify(json, null, 2);
     document.getElementById("cookieString").value = str;
 
-    // Show UID and name from cookies
+    // Show UID from cookies
     const c_user = cookies.find(c => c.name === "c_user");
     document.getElementById("uid").textContent = "UID: " + (c_user ? c_user.value : "N/A");
-
-    // Fetch public profile info using UID if available
-    if (c_user) {
-      const profileUrl = `https://www.facebook.com/${c_user.value}`;
-      fetch(profileUrl)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(html, "text/html");
-          const ogImage = doc.querySelector('meta[property="og:image"]');
-          const ogName = doc.querySelector('meta[property="og:title"]');
-          document.getElementById("pfp").src = ogImage ? ogImage.content : "";
-          document.getElementById("name").textContent = ogName ? "Name: " + ogName.content : "Name: N/A";
-        })
-        .catch(() => {
-          document.getElementById("pfp").src = "";
-          document.getElementById("name").textContent = "Name: N/A";
-        });
-    } else {
-      document.getElementById("pfp").src = "";
-      document.getElementById("name").textContent = "Name: N/A";
-    }
 
     // Copy buttons
     document.getElementById("copyJson").onclick = () => copy(JSON.stringify(json));
