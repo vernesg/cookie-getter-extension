@@ -5,6 +5,7 @@ body {
   background-color: #8a2be2; /* Purple background */
   color: #fff;
   transition: background-color 0.3s, color 0.3s;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 body.dark {
   background-color: #4b0082; /* Darker purple for dark mode */
@@ -14,50 +15,100 @@ body.light {
   background-color: #dda0dd; /* Lighter purple for light mode */
   color: #333;
 }
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -50%; /* Half page width, hidden initially */
+  width: 50%;
+  height: 100%;
+  background-color: #6a0dad; /* Deep purple sidebar */
+  transition: left 0.3s ease; /* Smooth slide */
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.sidebar.active {
+  left: 0; /* Slide in to cover half the page */
+}
+.nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav-menu li {
+  margin: 20px 0;
+}
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-menu a:hover {
+  text-decoration: underline;
+}
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #9370db; /* Purple when on */
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+.main-content {
+  margin-left: 0; /* No permanent shift, sidebar overlays */
+  transition: margin-left 0.3s ease;
+}
 .navbar {
   background-color: #6a0dad; /* Deep purple navbar */
   padding: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 .burger {
   font-size: 24px;
   cursor: pointer;
   color: #fff;
-}
-.nav-menu {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-.nav-menu li {
-  margin: 0 10px;
-}
-.nav-menu a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
-.nav-menu a:hover {
-  text-decoration: underline;
-}
-/* Burger menu toggle for mobile */
-@media (max-width: 600px) {
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 50px;
-    right: 10px;
-    background-color: #6a0dad;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  .nav-menu.active {
-    display: flex;
-  }
 }
 .container {
   padding: 20px;
