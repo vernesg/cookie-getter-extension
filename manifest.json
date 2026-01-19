@@ -1,12 +1,17 @@
 {
   "manifest_version": 3,
-  "name": "FB Cookie Extension",
+  "name": "Facebook Cookie Extractor",
   "version": "1.0",
-  "description": "View Facebook cookies, UID, and profile info",
-  "permissions": ["cookies", "tabs"],
-  "host_permissions": ["https://*.facebook.com/*"],
+  "description": "Extract and display Facebook cookies in JSON and string formats.",
+  "permissions": ["cookies", "activeTab"],
+  "host_permissions": ["https://www.facebook.com/*"],
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "icon.png"
+    "default_title": "Facebook Cookie Tool"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
   }
 }
