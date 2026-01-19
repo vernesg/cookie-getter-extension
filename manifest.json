@@ -2,9 +2,9 @@
   "manifest_version": 3,
   "name": "Facebook Cookie Extractor",
   "version": "1.0",
-  "description": "Extract and display Facebook cookies in JSON and string formats.",
-  "permissions": ["cookies", "activeTab"],
-  "host_permissions": ["https://www.facebook.com/*"],
+  "description": "View Facebook cookies in JSON and string formats.",
+  "permissions": ["cookies"],
+  "host_permissions": ["*://*.facebook.com/*"],
   "action": {
     "default_popup": "popup.html",
     "default_title": "Facebook Cookie Extractor"
